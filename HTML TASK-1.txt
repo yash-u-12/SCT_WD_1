@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+      color: #333;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: transparent;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.3s, box-shadow 0.3s;
+      z-index: 1000;
+    }
+
+    header.scrolled {
+      background-color: #0d47a1;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
+
+    .logo:hover {
+      color: #ffca28;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 17px;
+      transition: color 0.3s, border-bottom 0.3s;
+      padding-bottom: 2px;
+    }
+
+    nav a:hover {
+      color: #ffca28;
+      border-bottom: 2px solid #ffca28;
+    }
+
+    main {
+      margin-top: 100px;
+      padding: 40px 30px;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    section h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #0d47a1;
+    }
+
+    section p {
+      font-size: 18px;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #42a5f5, #00bcd4);
+      color: white;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    .hero h2 {
+      color: white;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 24px;
+      background-color: white;
+      color: #0d47a1;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #e3f2fd;
+    }
+  </style>
+</head>
+<body>
+
+  <header id="navbar">
+    <a href="#home" class="logo">MySite</a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h2>Welcome to MySite</h2>
+      <p>We provide smart solutions for your modern web presence. Scroll down to explore what we do!</p>
+      <button class="btn">Get Started</button>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are a team of passionate developers and designers creating beautiful, user-friendly websites and applications. Our mission is to empower your business with modern technology.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>From front-end development to backend APIs, we offer full-stack solutions tailored to your needs. Let's build something awesome together.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Have a project in mind or just want to say hello? Drop us a message and we’ll get back to you as soon as we can.</p>
+    </section>
+  </main>
+
+  <script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+
+</body>
+</html>
